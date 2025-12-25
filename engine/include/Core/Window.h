@@ -1,19 +1,23 @@
-// Window.h 
 #pragma once
-#include <memory>
+
 #include <string>
+#include <memory>
+// #include "Core/Core.h" // Uncomment if using DLL export macros like CORE_API
 
 namespace Core {
+
     class Window {
     public:
         Window(const std::string& title, int width, int height);
         ~Window();
 
-        // The method that starts the Qt Event Loop
-        void Run(); 
+        // Starts the main application loop
+        void Run();
 
     private:
-        struct Impl; // Hidden Qt implementation
+        // Opaque pointer to the implementation (Pimpl Idiom)
+        struct Impl;
         std::unique_ptr<Impl> m_pImpl;
     };
+
 }
