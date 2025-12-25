@@ -1,12 +1,12 @@
 #include <Core/Window.h>
+#include <iostream>
 
 int main() {
-    // Look! No QMainWindow, no Slots, no Macros.
-    // Just your clean Framework API.
-    Core::Window win("My Awesome App", 800, 600);
+    // No Qt includes needed here!
+    Core::Window window("Engine Template Window", 800, 600);
     
-    // This starts the Qt event loop internally
-    win.Run();
+    // The engine handles the loop
+    window.Run();
 
     return 0;
 }
